@@ -7,5 +7,5 @@ def call() {
         sh 'docker tag youssefjeh/my-app:3.0 dockerysf/my-app:3.0'
         sh "echo $PASS | docker login -u $USER --password-stdin"
         sh 'docker push dockerysf/my-app:3.0'
-
+    }
 }
