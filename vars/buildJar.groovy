@@ -2,5 +2,5 @@
 
 def call() {
     echo 'building Jar file...'
-    sh 'mvn package
+    sh 'mvn package'
 }
