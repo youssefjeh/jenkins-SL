@@ -2,7 +2,8 @@
 
 def call() {
     echo 'deploy to Nexus..'
-    pom = readMavenPom file: "https://github.com/youssefjeh/Maven-deploy-to-Nexus-using-Jenkins/blob/main/pom.xml";
+    def pom = readMavenPom(https://github.com/youssefjeh/Maven-deploy-to-Nexus-using-Jenkins/blob/main/pom.xml);
+   // pom = readMavenPom file: "https://github.com/youssefjeh/Maven-deploy-to-Nexus-using-Jenkins/blob/main/pom.xml";
     filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
     echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
     artifactPath = filesByGlob[0].path;
