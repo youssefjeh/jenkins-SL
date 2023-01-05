@@ -10,7 +10,7 @@ def call() {
     if(artifactExists) {
         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
         nexusArtifactUploader(
-                            nexusVersion: 'nexus3,
+                            nexusVersion: 'nexus3',
                             protocol: 'http',
                             nexusUrl: '20.199.22.41:8081',
                             groupId: 'pom.in.javahome',
