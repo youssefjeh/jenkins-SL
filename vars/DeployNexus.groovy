@@ -16,7 +16,7 @@ def call() {
                             groupId: 'pom.in.javahome',
                             version: 'pom.1.0.1-SNAPSHOT',
                             repository: 'MavenYJ-central',
-                            credentialsId: 'NEXUS_CRED,
+                            credentialsId: 'NEXUS_CRED',
                             artifacts: [
                                 [artifactId: 'pom.simple-app',
                                 classifier: '',
