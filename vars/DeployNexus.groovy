@@ -10,19 +10,19 @@ def call() {
     if(artifactExists) {
         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
         nexusArtifactUploader(
-                            nexusVersion: 'nexus3',
-                            protocol: 'http',
-                            nexusUrl: '20.199.22.41:8081',
-                            groupId: 'pom.in.javahome',
-                            version: 'pom.1.0.1-SNAPSHOT',
-                            repository: 'MavenYJ-central',
-                            credentialsId: 'NEXUS_CRED',
+                            nexusVersion: NEXUS_VERSION,
+                            protocol: NEXUS_PROTOCOL,
+                            nexusUrl: NEXUS_URL,
+                            groupId: pom.groupId,
+                            version: pom.version,
+                            repository: NEXUS_REPOSITORY,
+                            credentialsId: NEXUS_CREDENTIAL_ID,
                             artifacts: [
-                                [artifactId: 'pom.simple-app',
+                                [artifactId: pom.artifactId,
                                 classifier: '',
                                 file: artifactPath,
                                 type: pom.packaging],
-                                [artifactId: 'pom.simple-app',
+                                [artifactId: pom.artifactId,
                                 classifier: '',
                                 file: "pom.xml",
                                 type: "pom"]
